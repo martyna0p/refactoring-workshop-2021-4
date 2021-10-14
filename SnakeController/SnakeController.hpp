@@ -41,6 +41,7 @@ private:
     std::pair<int, int> m_mapDimension;
     std::pair<int, int> m_foodPosition;
 
+    // SEGMENT START
     struct Segment
     {
         int x;
@@ -49,6 +50,7 @@ private:
 
     std::list<Segment> m_segments;
     Direction m_currentDirection;
+    // SEGMENT END
 
     void handleTimeoutInd();
     void handleDirectionInd(std::unique_ptr<Event>);
@@ -56,12 +58,14 @@ private:
     void handleFoodResp(std::unique_ptr<Event>);
     void handlePauseInd(std::unique_ptr<Event>);
 
+    /// SEGMENT START
     bool isSegmentAtPosition(int x, int y) const;
     Segment calculateNewHead() const;
     void updateSegmentsIfSuccessfullMove(Segment const& newHead);
     void addHeadSegment(Segment const& newHead);
     void removeTailSegmentIfNotScored(Segment const& newHead);
     void removeTailSegment();
+    // SEGMENT END
 
     bool isPositionOutsideMap(int x, int y) const;
 
