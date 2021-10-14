@@ -22,12 +22,11 @@
 // {
 //     return (isVertical(direction) and Direction_DOWN == direction)
 //         or (isHorizontal(direction) and Direction_RIGHT == direction);
-// }
+// } int x, int y, 
 
 
 
-
-// bool SnakeSegment::isSegmentAtPosition(int x, int y) const
+// bool SnakeSegment::isSegmentAtPosition(std::list<SnakeSegment> m_segments) const
 // {
 //     return m_segments.end() !=  std::find_if(m_segments.cbegin(), m_segments.cend(),
 //         [x, y](auto const& segment){ return segment.x == x and segment.y == y; });

@@ -42,18 +42,8 @@ private:
     std::pair<int, int> m_mapDimension;
     std::pair<int, int> m_foodPosition;
 
-    // SEGMENT START
-    // struct Segment
-    // {
-    //     int x;
-    //     int y;
-    // };
-
-    // std::unique_ptr<SnakeSegment> segment = std::make_unique<SnakeSegment>();
-
     std::list<SnakeSegment> m_segments;
     Direction m_currentDirection;
-    // SEGMENT END
 
     void handleTimeoutInd();
     void handleDirectionInd(std::unique_ptr<Event>);
@@ -61,14 +51,14 @@ private:
     void handleFoodResp(std::unique_ptr<Event>);
     void handlePauseInd(std::unique_ptr<Event>);
 
-    /// SEGMENT START
-    bool isSegmentAtPosition(int x, int y) const;
+    /// SEGMENT FUNCTION START
+    bool isSegmentAtPosition(SnakeSegment) const;
     SnakeSegment calculateNewHead() const;
     void updateSegmentsIfSuccessfullMove(SnakeSegment const& newHead);
     void addHeadSegment(SnakeSegment const& newHead);
     void removeTailSegmentIfNotScored(SnakeSegment const& newHead);
     void removeTailSegment();
-    // SEGMENT END
+    // SEGMENT FUNCTION END
 
     bool isPositionOutsideMap(int x, int y) const;
 
